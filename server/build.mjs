@@ -1,0 +1,10 @@
+import { build } from 'esbuild';
+import { cp, mkdir, rm } from 'node:fs/promises';
+await rm('dist',{recursive:true,force:true});
+await mkdir('dist',{recursive:true});
+await build({entryPoints:['server/render.tsx'],outfile:'dist/render.mjs',bundle:true,platform:'node',format:'esm',jsx:'transform',mainFields:['module','main'],jsxFactory:'h',jsxFragment:'Fragment',external:[]});
+await cp('public','dist',{recursive:true});
+await cp('src/styles.css','dist/styles.css');
+await cp('src/browser.js','dist/browser.js');
+await cp('node_modules/htmx.org/dist/htmx.min.js','dist/htmx.min.js');
+console.log('Built server templates and browser assets.');
