@@ -1,0 +1,1 @@
+{"compilerOptions":{"target":"ES2022","module":"ESNext","moduleResolution":"Bundler","jsx":"preserve","jsxFactory":"h","jsxFragmentFactory":"Fragment","allowJs":true,"checkJs":false,"noEmit":true,"skipLibCheck":true},"include":["src","server"]}

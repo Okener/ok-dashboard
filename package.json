@@ -1,0 +1,24 @@
+{
+  "name": "ok-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch --watch-path=server --watch-path=src --watch-path=public --env-file-if-exists=.env server/dev.mjs",
+    "build": "tsc --noEmit && node server/build.mjs",
+    "start": "node --env-file-if-exists=.env server/index.mjs",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "google-auth-library": "^10.3.0",
+    "htmx.org": "^2.0.11",
+    "lucide": "^1.48.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.0",
+    "esbuild": "^0.28.2"
+  }
+}
